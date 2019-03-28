@@ -108,7 +108,7 @@
             } else {
                 this.$api('books', 'get')
                     .then(response => {
-                        this.book = response.filter( item => +item.id === +this.$route.params.id )[0];
+                        this.book = response.find( item => +item.id === +this.$route.params.id );
                     })
                     .catch(e => {
                         console.log(e);
